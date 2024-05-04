@@ -1,5 +1,13 @@
-<div class="mat-elevation-z8 overflow-visible h-full">
+<div class="mat-elevation-z8 flex flex-col h-full">
 
+
+  <div class="h-auto ">
+    <mat-paginator class="" #paginator [length]="dataSource.data.length" [pageIndex]="0" [pageSize]="100"
+      [pageSizeOptions]="[5, 50, 100]" aria-label="Select page">
+    </mat-paginator>
+  </div>
+  
+  <div class="flex-auto overflow-scroll border p-5">
     <table mat-table class="full-width-table" matSort aria-label="Elements">
       <!-- Id Column -->
       <ng-container matColumnDef="id">
@@ -22,9 +30,7 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+  </div>
 
 
-  <mat-paginator #paginator [length]="dataSource.data.length" [pageIndex]="0" [pageSize]="100"
-    [pageSizeOptions]="[5, 50, 100]" aria-label="Select page">
-  </mat-paginator>
 </div>

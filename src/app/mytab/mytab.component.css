@@ -1,0 +1,7 @@
+.full-width-table {
+  width: 100%;
+}
+tr:nth-child(even) {
+  /*class="bg-gray-50";*/
+background: rgb(248, 247, 247);
+}

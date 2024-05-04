@@ -1,5 +1,5 @@
-<mat-sidenav-container class="sidenav-container" >
-  <mat-sidenav #drawer class="sidenav h-full" fixedInViewport
+<mat-sidenav-container class="sidenav-container overflow-visible  flex" >
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
@@ -25,7 +25,7 @@
     </mat-toolbar>
     <!-- Add Content Here -->
 
-    <div class="m-4 my-6 h-full">
+    <div class="m-4 my-6">
       <app-mytab >
 
       </app-mytab>

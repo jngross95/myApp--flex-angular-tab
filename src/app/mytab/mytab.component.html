@@ -1,36 +1,30 @@
-<div class="mat-elevation-z8 ">
-  
-  <div class="">
+<div class="mat-elevation-z8 overflow-visible h-full">
 
-  
-  <table mat-table class="full-width-table" matSort aria-label="Elements">
-    <!-- Id Column -->
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id11</th>
-      <td class="border px-4 py-2" mat-cell *matCellDef="let row">{{row.id}}</td>
-    </ng-container>
+    <table mat-table class="full-width-table" matSort aria-label="Elements">
+      <!-- Id Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Id11</th>
+        <td class="border px-4 py-2" mat-cell *matCellDef="let row">{{row.id}}</td>
+      </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name22</th>
-      <td class="border px-4 py-2" mat-cell *matCellDef="let row">{{row.name}}</td>
-    </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Name22</th>
+        <td class="border px-4 py-2" mat-cell *matCellDef="let row">{{row.name}}</td>
+      </ng-container>
 
-     <!-- Name Year -->
-     <ng-container matColumnDef="year">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Year</th>
-      <td class="border px-4 py-2" mat-cell *matCellDef="let row">{{row.year}}</td>
-    </ng-container>
+      <!-- Name Year -->
+      <ng-container matColumnDef="year">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Year</th>
+        <td class="border px-4 py-2" mat-cell *matCellDef="let row">{{row.year}}</td>
+      </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-</div>
-  <mat-paginator #paginator
-      [length]="dataSource.data.length"
-      [pageIndex]="0"
-      [pageSize]="100"
-      [pageSizeOptions]="[5, 50, 100]"
-      aria-label="Select page">
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+
+  <mat-paginator #paginator [length]="dataSource.data.length" [pageIndex]="0" [pageSize]="100"
+    [pageSizeOptions]="[5, 50, 100]" aria-label="Select page">
   </mat-paginator>
 </div>

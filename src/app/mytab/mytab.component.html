@@ -1,9 +1,9 @@
-<div class="mat-elevation-z8 flex flex-col h-full">
+<div class="mat-elevation-z8 flex-auto flex flex-col ">
 
 
 
 
-  <div class="flex-auto  h-0 overflow-y-scroll border p-5">
+  <div class="flex-auto  h-0     overflow-y-scroll border p-5">
     <table mat-table class="full-width-table" matSort aria-label="Elements">
       <!-- Id Column -->
       <ng-container matColumnDef="id">
@@ -27,7 +27,7 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
   </div>
-  <div class="h-auto ">
+  <div class="">
     <mat-paginator class="" #paginator [length]="dataSource.data.length" [pageIndex]="0" [pageSize]="100"
       [pageSizeOptions]="[5, 50, 100]" aria-label="Select page">
     </mat-paginator>

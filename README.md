@@ -1,27 +1,39 @@
-# MyApp
+## flex
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+in den body der index.html:
 
-## Development server
+<body class="h-screen  flex flex-col ">
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+einmalig 'h-screen'   für die 100vh   h bedeutet höhe nicht horizonatl...    
 
-## Code scaffolding
+dann wie immer für den container:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+'flex'  und wenn Vertikal ausgerichtet werden soll 'flex-col'. Achtung 'flex-col' alleine reicht nicht aus.
 
-## Build
+jetzt werden die Children nach den flex-Regeln angeordnet. Normalrweise werden die elemente einfach horiz/vertikal gestapelt.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Child-Elemente beeinflussen
 
-## Running unit tests
+'flex-auto' : Die Grössse des Child fenster wird so verändert dass der Platz ausgefüllt wird. 
+                 Wenn das Child kleiner ist, wird es vergrössert!
+                 Wenn das Child grösser ist, wird es nicht verkleinert, --> Globale scrollbar schaltet sich ein.  (lösst sich mit overflow-y-scroll verhindern)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Trick: mit h-0   Setzen der Höhe des Fensters auf einen kleinen Wert, kann erreicht werden, 
+                    das flex genau die Grösse setzt damit das Fenster exakt ausgefüllt wird.
+                 --->  Dadurch wird der Scrollbar nicht sichtbar. (Nur in Extrem situationen)
+                   der scrollbar muss also nicht deaktiviert werden. Besser nicht deaktivieren, dann siet msn 
+                    ob allesok ist.   mit class="bg-red-100" prüfen wie gross das Element vom flex-System berechnet ist.
 
-## Running end-to-end tests
+Bei der Tabelle woe also der Scroller sichtbar sein soll:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+ <div class="flex-auto  h-0    overflow-y-scroll 
 
-## Further help
+zusätzlich 'overflow-y-scroll '   dadurch wird das zu grosse fenster gescrollt und es wird niemals grösseer als vom flex-System vorgegeben.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+------------
+
+Achtung An divs muss die flex-Berechnung durchgeschleust werden. Das geht mit einem 
+
+<div class="flex-auto     flex flex-col">
+
+Einmal ist es ein Child und es ist ein Container ...

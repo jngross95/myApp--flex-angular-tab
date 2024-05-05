@@ -1,26 +1,26 @@
 <div class="mat-elevation-z8 flex-auto      flex flex-col ">
 
-  <div class="flex-auto  h-36    overflow-y-scroll border p-5">
+  <div class="flex-auto  h-36    overflow-y-scroll border">
     <table mat-table class="full-width-table" matSort aria-label="Elements">
       <!-- Id Column -->
       <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Id11</th>
-        <td class="border px-4 py-2" mat-cell *matCellDef="let row">{{row.id}}</td>
+        <th class="border" mat-header-cell *matHeaderCellDef mat-sort-header>Id11</th>
+        <td class="border" mat-cell *matCellDef="let row">{{row.id}}</td>
       </ng-container>
 
       <!-- Name Column -->
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Name22</th>
-        <td class="border px-4 py-2" mat-cell *matCellDef="let row">{{row.name}}</td>
+        <td class="border" mat-cell *matCellDef="let row">{{row.name}}</td>
       </ng-container>
 
       <!-- Name Year -->
       <ng-container matColumnDef="year">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Year</th>
-        <td class="border px-4 py-2" mat-cell *matCellDef="let row">{{row.year}}</td>
+        <td class="border" mat-cell *matCellDef="let row">{{row.year}}</td>
       </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
   </div>
